@@ -48,7 +48,7 @@ header p {
 }
 
 /* Timeline section layout */
-section {
+section.timeline {
 	display: flex;
 	gap: 16px;
 	max-width: 1468px;
@@ -58,7 +58,7 @@ section {
 	scroll-snap-type: x mandatory;
 }
 
-section > div {
+section.timeline > div {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -76,28 +76,28 @@ section > div {
 	overflow: hidden;
 }
 
-section > div img {
+section.timeline > div img {
 	width: 100%;
 	aspect-ratio: 16/9;
 	object-fit: cover;
 	border-radius: 8px;
 }
 
-section > div h2 {
+section.timeline > div h2 {
 	margin: 0 0 6px;
 	font-size: 1.4rem;
 	color: #0b3d91;
 }
 
-section > div h3 {
+section.timeline > div h3 {
 	margin: 0 0 10px;
 	font-size: 1.05rem;
 	color: #102a54;
 }
 
-section > div p {
+section.timeline > div p {
 	margin: 0;
-	color: #344767;
+	color: #0b3d91;
 	line-height: 1.5;
 	position: absolute;
 	bottom: 0;
@@ -106,22 +106,22 @@ section > div p {
 	padding: 20px;
 	min-height: 220px;
 	max-height: 100%;
-	background: rgba(11, 61, 145, 0.9);
+	background: #0b3d91;
 	color: #ffffff;
 	transform: translateY(100%);
 	transition: transform 0.6s ease;
 }
 
-section > div:hover {
+section.timeline > div:hover {
 	background: rgb(231, 230, 230);
 	transform: translateY(-6px);
 }
 
-section > div:hover h2, section > div:hover h3, section > div:hover img {
+section.timeline > div:hover h2, section > div:hover h3, section > div:hover img {
 	opacity: 0.7;
 }
 
-section > div:hover p {
+section.timeline > div:hover p {
 	opacity: 1;
 	/* Slide overlay up on hover */
 	transform: translateY(0);
@@ -133,6 +133,276 @@ body > p {
 	color: #5b6b86;
 	font-size: 0.95rem;
 	text-align: center;
+}
+
+/* Newsletter Subscription Section */
+.newsletter-section {
+	background: linear-gradient(135deg, #0b3d91 0%, #3b82f6 100%);
+	margin-top: 40px;
+	padding-top: 60px !important;
+	padding-bottom: 60px !important;
+}
+
+.newsletter-title {
+	color: #ffffff;
+	font-size: 2.2rem;
+	font-weight: 600;
+	text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.newsletter-subtitle {
+	color: rgba(255, 255, 255, 0.9);
+	font-size: 1.05rem;
+	line-height: 1.6;
+}
+
+.newsletter-section button {
+	color: white;
+	background-color: black;
+}
+
+/* Form control accessibility and styling */
+.form-label {
+	font-weight: 600;
+	color: white;
+	margin-bottom: 0.75rem;
+	font-size: 0.95rem;
+}
+
+.form-control {
+	border: 2px solid #d6e2f5;
+	border-radius: 6px;
+	padding: 0.75rem;
+	font-size: 0.95rem;
+	background-color: #ffffff;
+	color: black;
+	transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-control:focus {
+	border-color: #0b3d91;
+	box-shadow: 0 0 0 0.25rem rgba(11, 61, 145, 0.25);
+	background-color: #ffffff;
+	color: black;
+}
+
+.form-control::placeholder {
+	color: #999;
+	opacity: 0.8;
+}
+
+/* High contrast labels and help text for accessibility */
+.form-text {
+	font-size: 0.85rem;
+	color: #5b6b86;
+}
+
+/* Form checkbox accessibility */
+.form-check {
+	display: flex;
+	align-items: center;
+}
+
+.form-check-input {
+	width: 1.25em;
+	height: 1.25em;
+	margin-top: 0;
+	margin-right: 0.5rem;
+	border: 2px solid #d6e2f5;
+	cursor: pointer;
+	transition: all 0.2s ease;
+	flex-shrink: 0;
+}
+
+.form-check-input:checked {
+	background-color: #0b3d91;
+	border-color: #0b3d91;
+}
+
+.form-check-input:focus {
+	border-color: #0b3d91;
+	box-shadow: 0 0 0 0.25rem rgba(11, 61, 145, 0.25);
+}
+
+.form-check-label {
+	margin-left: 0;
+	color: whitesmoke;
+	font-weight: 500;
+	cursor: pointer;
+	margin-bottom: 0;
+}
+
+/* Form validation states */
+.form-control.is-invalid,
+.form-control:invalid {
+	border-color: #dc3545;
+}
+
+.form-control.is-invalid:focus,
+.form-control:invalid:focus {
+	border-color: #dc3545;
+	box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.25);
+}
+
+/* Success message accessibility */
+.alert {
+	border-radius: 6px;
+	border: 1px solid transparent;
+	font-weight: 500;
+}
+
+.alert-success {
+	background-color: #d4edda;
+	border-color: #c3e6cb;
+	color: #155724;
+}
+
+/* Footer Styling */
+.footer {
+	background-color: #10377b;
+	color: #ffffff;
+	margin-top: 8rem;
+	padding-top: 40px;
+	padding-bottom: 20px;
+}
+
+.footer-heading {
+	color: #ffffff;
+	font-size: 1.2rem;
+	font-weight: 600;
+	margin-bottom: 1.5rem;
+	letter-spacing: 0.5px;
+}
+
+.footer-text {
+	color: rgba(255, 255, 255, 0.85);
+	line-height: 1.6;
+	font-size: 0.95rem;
+}
+
+/* Footer Navigation Links */
+.footer-nav {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.footer-nav li {
+	margin-bottom: 0.75rem;
+}
+
+.footer-nav a {
+	color: rgba(255, 255, 255, 0.8);
+	text-decoration: none;
+	font-size: 0.95rem;
+	transition: all 0.2s ease;
+	display: inline-block;
+	padding: 0.25rem 0;
+	position: relative;
+}
+
+.footer-nav a:hover {
+	color: #3b82f6;
+	text-decoration: none;
+	transform: translateX(4px);
+}
+
+.footer-nav a:focus {
+	outline: 2px solid #3b82f6;
+	outline-offset: 2px;
+	border-radius: 2px;
+}
+
+/* High contrast for footer border */
+.border-secondary {
+	border-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+.footer-copyright {
+	color: rgba(255, 255, 255, 0.7);
+	font-size: 0.9rem;
+	margin: 0;
+}
+
+.text-muted {
+	color: rgba(255, 255, 255, 0.6) !important;
+}
+
+/* Sustainability Pillars Section - Bootstrap 3-Column Layout */
+.sustainability-section {
+	background-color: #f5f7fb;
+	margin-top: 40px;
+}
+
+.sustainability-section h2 {
+	color: #0b3d91;
+	font-size: 2.2rem;
+	font-weight: 600;
+	letter-spacing: 0.5px;
+}
+
+/* Pillar Card styling */
+.pillar-card {
+	background: #ffffff;
+	border: 2px solid #d6e2f5;
+	box-shadow: 0 4px 12px rgba(11, 61, 145, 0.08);
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+	display: flex;
+	flex-direction: column;
+}
+
+.pillar-card:hover {
+	transform: translateY(-8px);
+	box-shadow: 0 12px 24px rgba(11, 61, 145, 0.15);
+}
+
+.pillar-card h3 {
+	color: #0b3d91;
+	font-size: 1.3rem;
+	font-weight: 600;
+	margin-bottom: 1rem;
+}
+
+.pillar-card p {
+	color: #344767;
+	line-height: 1.6;
+	flex-grow: 1;
+	margin-bottom: 1.5rem;
+}
+
+/* Button styling */
+.btn-primary {
+	background-color: #0b3d91;
+	border-color: #0b3d91;
+	font-weight: 600;
+	font-size: 0.9rem;
+	transition: all 0.2s ease;
+	text-decoration: none;
+	color: #ffffff;
+}
+
+.btn-primary:hover {
+	background-color: #051f5a;
+	border-color: #051f5a;
+	transform: translateX(4px);
+	color: #ffffff;
+}
+
+.btn-primary:focus {
+	box-shadow: 0 0 0 0.25rem rgba(11, 61, 145, 0.5);
+	outline: 2px solid transparent;
+	outline-offset: 2px;
+}
+
+.btn-primary:active {
+	background-color: #0a2d6e;
+	border-color: #0a2d6e;
+}
+
+/* Enhanced focus state for accessibility */
+.btn-primary:focus-visible {
+	outline: 3px solid #3b82f6;
+	outline-offset: 2px;
 }
 
 /* Responsive layout: stack cards on small screens */
@@ -149,21 +419,58 @@ body > p {
 		width: 120px;
 	}
 
-	section {
+	section.timeline {
 		flex-direction: column;
 		width: 85%;
 		overflow-x: visible;
 	}
 
-	section > div img {
+	section.timeline > div img {
 		width: 100%;
 		aspect-ratio: 1/1;
 	}
 
-	section > div {
+	section.timeline > div {
 		max-width: 100%;
 		width: 100%;
 		min-width: unset;
+	}
+
+	.sustainability-section h2 {
+		font-size: 1.5rem;
+	}
+
+	.pillar-card h3 {
+		font-size: 1.1rem;
+	}
+
+	.pillar-card p {
+		font-size: 0.95rem;
+	}
+
+	.newsletter-title {
+		font-size: 1.8rem;
+	}
+
+	.newsletter-subtitle {
+		font-size: 0.95rem;
+	}
+
+	.form-control {
+		font-size: 1rem; /* Prevents zoom on iOS */
+	}
+
+	.footer {
+		padding-top: 30px;
+	}
+
+	.footer-heading {
+		margin-top: 1.5rem;
+		font-size: 1.1rem;
+	}
+
+	.footer-heading:first-child {
+		margin-top: 0;
 	}
 }
 
@@ -171,7 +478,85 @@ body > p {
 	header p {
 		font-size: 0.9rem;
 	}
-	section p {
+	
+	section.timeline p {
 		font-size: 0.85rem;
 	}
+
+	.sustainability-section h2 {
+		font-size: 1.3rem;
+	}
+
+	.newsletter-title {
+		font-size: 1.5rem;
+	}
+
+	.newsletter-subtitle {
+		font-size: 0.9rem;
+	}
+
+	.pillar-card {
+		padding: 1.5rem !important;
+	}
+
+	.form-control-lg {
+		padding: 0.6rem;
+		font-size: 1rem;
+	}
+
+	.btn-lg {
+		padding: 0.6rem;
+		font-size: 0.95rem;
+	}
+}
+
+/* RTL (Right-to-Left) Support for Arabic, Hebrew, etc. */
+html[dir="rtl"] {
+	direction: rtl;
+	text-align: right;
+}
+
+/* html[dir="rtl"] header h1,
+html[dir="rtl"] header p {
+	text-align: right;
+} */
+
+html[dir="rtl"] .pillar-card h3,
+html[dir="rtl"] .pillar-card p {
+	text-align: right;
+}
+
+html[dir="rtl"] .btn-primary:hover {
+	transform: translateX(-4px);
+}
+
+html[dir="rtl"] .newsletter-section {
+	text-align: right;
+}
+
+html[dir="rtl"] .form-label {
+	text-align: right;
+}
+
+html[dir="rtl"] .form-check {
+	text-align: right;
+	padding-left: 0;
+	padding-right: 1.5em;
+	display: flex;
+	flex-direction: row;
+	gap: 0.75rem;
+	align-items: center;
+}
+
+html[dir="rtl"] .form-check-input {
+	margin-left: 0;
+	margin-right: -1.5em;
+}
+
+html[dir="rtl"] .footer-nav a:hover {
+	transform: translateX(-4px);
+}
+
+html[dir="rtl"] .footer-nav a:hover {
+	transform: translateX(-4px);
 }
